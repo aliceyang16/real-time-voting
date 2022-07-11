@@ -5,3 +5,6 @@ help:
 
 voting-backend-up:
 	docker compose -f docker/backend/local.yaml --project-directory . up $(args)
+
+voting-backend-down:
+	docker compose -f docker/backend/local.yaml --project-directory . down
