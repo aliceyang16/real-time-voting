@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  django: 
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+    image: django_image
+    container_name: django
+    volumes:
+      - ./src:/src
+    ports:
+      - "8000:8000"
+    command: /start
