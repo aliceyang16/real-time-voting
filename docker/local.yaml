@@ -12,3 +12,15 @@ services:
     ports:
       - "8000:8000"
     command: /start
+
+  react:
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
+    image: react_image
+    container_name: react
+    volumes:
+      - ./src:/src
+    ports:
+      - "3000:3000"
+    command: /start
