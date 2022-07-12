@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import generics
+
+from .models import Ballots
+from .serializers import BallotsSerializer
 
 # Create your views here.
-def main(request):
-    return HttpResponse("Hello World")
+class BallotsView(generics.ListAPIView):
+    queryset = Ballots.objects.all()
+    serializer_class = BallotsSerializer
