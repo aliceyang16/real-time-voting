@@ -4,7 +4,7 @@ COPY ./docker/backend/start /start
 RUN chmod +x /start
 
 # Install python packages
-COPY ./src/backend/requirements.txt requirements.txt
+COPY ./requirements/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 WORKDIR /src/backend

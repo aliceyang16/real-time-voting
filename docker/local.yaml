@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  django: 
+  django:
     build:
       context: .
       dockerfile: ./docker/backend/Dockerfile
@@ -21,6 +21,7 @@ services:
     container_name: react
     volumes:
       - ./src:/src
+    working_dir: /src/frontend
     ports:
       - "3000:3000"
     command: /start

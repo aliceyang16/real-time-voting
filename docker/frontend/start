@@ -4,4 +4,4 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-REACT_APP_API_URL_PORT=8000 npm run dev
+REACT_APP_API_URL_PORT=8000 yarn start
