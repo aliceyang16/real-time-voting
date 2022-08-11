@@ -8,3 +8,9 @@ voting-backend-up:
 
 voting-backend-down:
 	docker compose -f docker/local.yaml --project-directory . down
+
+web-graphene-export-schema:
+	docker compose -f docker/local.yml --project-directory . run --rm django python manage.py graphql_schema --schema schema.schema --out /src/frontend/src/graphql/schema.graphql
+
+web-relay-compile:
+	docker compose -f docker/local.yml --project-directory . run --rm react zsh -c "yarn relay"

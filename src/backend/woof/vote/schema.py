@@ -33,3 +33,7 @@ class BallotsMutation(graphene.Mutation):
     def mutate(cls, root, info, **input):
         Ballots.objects.create(dog_vote=dog_vote, cat_vote=cat_vote)
         return cls(ok=True)
+
+
+class Mutation(graphene.ObjectType):
+    insert_ballots = BallotsMutation.Field()
